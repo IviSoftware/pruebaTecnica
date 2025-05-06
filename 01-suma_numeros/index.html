@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-advent</title>
+</head>
+<body>
+    
+    <h2>advent-01-suma en circulo</h2>
+
+
+    <input type="text" placeholder="Ingrese el número" id="userNumber" />
+
+    <button id="btnCalculeNumber">Calcular</button>
+
+    <p id="resultUser"></p>
+
+    <script>
+        //Objetivo: sumar el número que sea igual al anterior
+        //Consideraciones: el ultimo se suma con el primero
+        let suma = 0;
+        const btnCalculateNumber = document.getElementById('btnCalculeNumber');
+        
+
+
+        const handleCalculate = () => {
+            const resultUser = document.getElementById
+            const userValue = document.getElementById('userNumber').value;
+
+           //Comparar con el siguiente
+           //Preguntamos si es igual
+            //Si: agregar valor a la suma
+            //No: No hacer nada y continuar con el flujo
+        //Nota: El ultimo se suma con el primero porque es en circulo                                                                                                                                                                                                                                                                                                                                                   
+        //¿Como creamos el circulo?
+            for(let i=0;i<userValue.length;i++){
+                let currentValue = parseInt(userValue[i],10);
+                let nextValue = parseInt(userValue[i + 1],10);
+                let lastValueCircle = parseInt(userValue[(i + 1) - userValue.length],10)
+                //Si no es el ultimo
+                if(i!=(userValue.length-1)){
+                    if(currentValue === nextValue){
+                        suma = suma + currentValue;
+                    }
+                }else if(i===(userValue.length-1)){
+                    //Es el ultimo
+                   if(currentValue === lastValueCircle){
+                        suma = suma + currentValue;
+                   }
+                }
+            }
+
+
+            console.log(suma,'suma')
+
+            //Necesitamos limpiar el estado una ves mostrado el resultado al usuario
+
+        
+        }
+
+        btnCalculateNumber.addEventListener('click',handleCalculate)
+
+
+
+    </script>
+</body>
+</html>
